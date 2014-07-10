@@ -38,6 +38,24 @@ func == (lhs: Vector3, rhs: Vector3) -> Bool {
   return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
 }
 
+/**
+ * Calculates the dot product of two vectors. (Math Symbols/DOT OPERATOR)
+ */
+operator infix ⋅ { associativity left }
+func ⋅ (left: Vector3, right: Vector3) -> CGFloat {
+  return left.x * right.x + left.y * right.y + left.z * right.z
+}
+
+/**
+ * Calculates the cross product of two vectors. (Math Symbols/MULTIPLICATION SIGN)
+ */
+operator infix × { associativity left }
+func × (left: Vector3, right: Vector3) -> Vector3 {
+  return Vector3(x: left.y * right.z - left.z * right.y,
+                 y: left.z * right.x - left.x * right.z,
+                 z: left.x * right.y - left.y * right.x)
+}
+
 extension Vector3 {
   /**
    * Returns true if all the vector elements are equal to the provided value.
