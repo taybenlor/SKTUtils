@@ -109,6 +109,34 @@ extension CGVector {
 }
 
 /**
+ * Adds a tuple to this CGVector and returns the result as a new CGVector.
+ */
+@infix func + (left: CGVector, right: (x: CGFloat, y: CGFloat)) -> CGVector {
+  return CGVector(dx: left.dx + right.x, dy: left.dy + right.y)
+}
+
+/**
+ * Increments a CGVector with the value of a tuple.
+ */
+@assignment func += (inout left: CGVector, right: (x: CGFloat, y: CGFloat)) {
+  left = left + right
+}
+
+/**
+ * Adds a tuple to this CGVector and returns the result as a new CGVector.
+ */
+@infix func + (left: CGVector, right: (x: Int, y: Int)) -> CGVector {
+  return CGVector(dx: left.dx + right.x, dy: left.dy + right.y)
+}
+
+/**
+ * Increments a CGVector with the value of a tuple.
+ */
+@assignment func += (inout left: CGVector, right: (x: Int, y: Int)) {
+  left = left + right
+}
+
+/**
  * Subtracts two CGVector values and returns the result as a new CGVector.
  */
 @infix func - (left: CGVector, right: CGVector) -> CGVector {
@@ -119,6 +147,34 @@ extension CGVector {
  * Decrements a CGVector with the value of another.
  */
 @assignment func -= (inout left: CGVector, right: CGVector) {
+  left = left - right
+}
+
+/**
+ * Subtracts a tuple from a CGVector and returns the result as a new CGVector.
+ */
+@infix func - (left: CGVector, right: (x: CGFloat, y: CGFloat)) -> CGVector {
+  return CGVector(dx: left.dx - right.x, dy: left.dy - right.y)
+}
+
+/**
+ * Decrements a CGVector with the value of a tuple.
+ */
+@assignment func -= (inout left: CGVector, right: (x: CGFloat, y: CGFloat)) {
+  left = left - right
+}
+
+/**
+ * Subtracts a tuple from a CGVector and returns the result as a new CGVector.
+ */
+@infix func - (left: CGVector, right: (x: Int, y: Int)) -> CGVector {
+  return CGVector(dx: left.dx - right.x, dy: left.dy - right.y)
+}
+
+/**
+ * Decrements a CGVector with the value of a tuple.
+ */
+@assignment func -= (inout left: CGVector, right: (x: Int, y: Int)) {
   left = left - right
 }
 
@@ -152,6 +208,34 @@ extension CGVector {
 }
 
 /**
+ * Multiplies a CGVector with a tuple and returns the result as a new CGVector.
+ */
+@infix func * (left: CGVector, right: (x: CGFloat, y: CGFloat)) -> CGVector {
+  return CGVector(dx: left.dx * right.x, dy: left.dy * right.y)
+}
+
+/**
+ * Multiplies a CGVector with a tuple.
+ */
+@assignment func *= (inout left: CGVector, right: (x: CGFloat, y: CGFloat)) {
+  left = left * right
+}
+
+/**
+ * Multiplies a CGVector with a tuple and returns the result as a new CGVector.
+ */
+@infix func * (left: CGVector, right: (x: Int, y: Int)) -> CGVector {
+  return CGVector(dx: left.dx * right.x, dy: left.dy * right.y)
+}
+
+/**
+ * Multiplies a CGVector with a tuple.
+ */
+@assignment func *= (inout left: CGVector, right: (x: Int, y: Int)) {
+  left = left * right
+}
+
+/**
  * Divides two CGVector values and returns the result as a new CGVector.
  */
 @infix func / (left: CGVector, right: CGVector) -> CGVector {
@@ -178,6 +262,34 @@ extension CGVector {
  */
 @assignment func /= (inout vector: CGVector, scalar: CGFloat) {
   vector = vector / scalar
+}
+
+/**
+ * Divides a CGVector by a tuple and returns the result as a new CGVector.
+ */
+@infix func / (left: CGVector, right: (x: CGFloat, y: CGFloat)) -> CGVector {
+  return CGVector(dx: left.dx / right.x, dy: left.dy / right.y)
+}
+
+/**
+ * Divides a CGVector by a tuple.
+ */
+@assignment func /= (inout left: CGVector, right: (x: CGFloat, y: CGFloat)) {
+  left = left / right
+}
+
+/**
+ * Divides a CGVector by a tuple and returns the result as a new CGVector.
+ */
+@infix func / (left: CGVector, right: (x: Int, y: Int)) -> CGVector {
+  return CGVector(dx: left.dx / right.x, dy: left.dy / right.y)
+}
+
+/**
+ * Divides a CGVector by a tuple.
+ */
+@assignment func /= (inout left: CGVector, right: (x: Int, y: Int)) {
+  left = left / right
 }
 
 /**

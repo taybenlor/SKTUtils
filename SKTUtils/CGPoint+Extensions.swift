@@ -123,6 +123,34 @@ extension CGPoint {
 }
 
 /**
+ * Adds a tuple to this CGPoint and returns the result as a new CGPoint.
+ */
+@infix func + (left: CGPoint, right: (x: CGFloat, y: CGFloat)) -> CGPoint {
+  return CGPoint(x: left.x + right.x, y: left.y + right.y)
+}
+
+/**
+ * Increments a CGPoint with the value of a tuple.
+ */
+@assignment func += (inout left: CGPoint, right: (x: CGFloat, y: CGFloat)) {
+  left = left + right
+}
+
+/**
+ * Adds a tuple to this CGPoint and returns the result as a new CGPoint.
+ */
+@infix func + (left: CGPoint, right: (x: Int, y: Int)) -> CGPoint {
+  return CGPoint(x: left.x + right.x, y: left.y + right.y)
+}
+
+/**
+ * Increments a CGPoint with the value of a tuple.
+ */
+@assignment func += (inout left: CGPoint, right: (x: Int, y: Int)) {
+  left = left + right
+}
+
+/**
  * Subtracts two CGPoint values and returns the result as a new CGPoint.
  */
 @infix func - (left: CGPoint, right: CGPoint) -> CGPoint {
@@ -147,6 +175,34 @@ extension CGPoint {
  * Decrements a CGPoint with the value of a CGVector.
  */
 @assignment func -= (inout left: CGPoint, right: CGVector) {
+  left = left - right
+}
+
+/**
+ * Subtracts a tuple from a CGPoint and returns the result as a new CGPoint.
+ */
+@infix func - (left: CGPoint, right: (x: CGFloat, y: CGFloat)) -> CGPoint {
+  return CGPoint(x: left.x - right.x, y: left.y - right.y)
+}
+
+/**
+ * Decrements a CGPoint with the value of a tuple.
+ */
+@assignment func -= (inout left: CGPoint, right: (x: CGFloat, y: CGFloat)) {
+  left = left - right
+}
+
+/**
+ * Subtracts a tuple from a CGPoint and returns the result as a new CGPoint.
+ */
+@infix func - (left: CGPoint, right: (x: Int, y: Int)) -> CGPoint {
+  return CGPoint(x: left.x - right.x, y: left.y - right.y)
+}
+
+/**
+ * Decrements a CGPoint with the value of a tuple.
+ */
+@assignment func -= (inout left: CGPoint, right: (x: Int, y: Int)) {
   left = left - right
 }
 
@@ -194,6 +250,34 @@ extension CGPoint {
 }
 
 /**
+ * Multiplies a CGPoint with a tuple and returns the result as a new CGPoint.
+ */
+@infix func * (left: CGPoint, right: (x: CGFloat, y: CGFloat)) -> CGPoint {
+  return CGPoint(x: left.x * right.x, y: left.y * right.y)
+}
+
+/**
+ * Multiplies a CGPoint with a tuple.
+ */
+@assignment func *= (inout left: CGPoint, right: (x: CGFloat, y: CGFloat)) {
+  left = left * right
+}
+
+/**
+ * Multiplies a CGPoint with a tuple and returns the result as a new CGPoint.
+ */
+@infix func * (left: CGPoint, right: (x: Int, y: Int)) -> CGPoint {
+  return CGPoint(x: left.x * right.x, y: left.y * right.y)
+}
+
+/**
+ * Multiplies a CGPoint with a tuple.
+ */
+@assignment func *= (inout left: CGPoint, right: (x: Int, y: Int)) {
+  left = left * right
+}
+
+/**
  * Divides two CGPoint values and returns the result as a new CGPoint.
  */
 @infix func / (left: CGPoint, right: CGPoint) -> CGPoint {
@@ -233,6 +317,34 @@ extension CGPoint {
  * Divides a CGPoint by a CGVector.
  */
 @assignment func /= (inout left: CGPoint, right: CGVector) {
+  left = left / right
+}
+
+/**
+ * Divides a CGPoint by a tuple and returns the result as a new CGPoint.
+ */
+@infix func / (left: CGPoint, right: (x: CGFloat, y: CGFloat)) -> CGPoint {
+  return CGPoint(x: left.x / right.x, y: left.y / right.y)
+}
+
+/**
+ * Divides a CGPoint by a tuple.
+ */
+@assignment func /= (inout left: CGPoint, right: (x: CGFloat, y: CGFloat)) {
+  left = left / right
+}
+
+/**
+ * Divides a CGPoint by a tuple and returns the result as a new CGPoint.
+ */
+@infix func / (left: CGPoint, right: (x: Int, y: Int)) -> CGPoint {
+  return CGPoint(x: left.x / right.x, y: left.y / right.y)
+}
+
+/**
+ * Divides a CGPoint by a tuple.
+ */
+@assignment func /= (inout left: CGPoint, right: (x: Int, y: Int)) {
   left = left / right
 }
 

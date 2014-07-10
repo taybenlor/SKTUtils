@@ -6,6 +6,8 @@ import SpriteKit
 class CGVectorTests: XCTestCase {
   var v1 = CGVector(dx: 100, dy: 50)
   let v2 = CGVector(dx: 10, dy: 5)
+  let itup = (10, 5)
+  let ftup = (10.0, 5.0)
 
   func testAddingTwoVectors() {
     XCTAssertEqual(v1 + v2, CGVector(dx: 110, dy: 55))
@@ -16,12 +18,32 @@ class CGVectorTests: XCTestCase {
     XCTAssertEqual(v1, CGVector(dx: 110, dy: 55))
   }
 
+  func testAddingIntTupleToVector() {
+    v1 += itup
+    XCTAssertEqual(v1, CGVector(dx: 110, dy: 55))
+  }
+
+  func testAddingFloatTupleToVector() {
+    v1 += ftup
+    XCTAssertEqual(v1, CGVector(dx: 110, dy: 55))
+  }
+
   func testSubtractingTwoVectors() {
     XCTAssertEqual(v1 - v2, CGVector(dx: 90, dy: 45))
   }
 
   func testSubtractingVectorFromVector() {
     v1 -= v2
+    XCTAssertEqual(v1, CGVector(dx: 90, dy: 45))
+  }
+
+  func testSubtractingIntTupleFromVector() {
+    v1 -= itup
+    XCTAssertEqual(v1, CGVector(dx: 90, dy: 45))
+  }
+
+  func testSubtractingFloatTupleFromVector() {
+    v1 -= ftup
     XCTAssertEqual(v1, CGVector(dx: 90, dy: 45))
   }
 
@@ -43,6 +65,16 @@ class CGVectorTests: XCTestCase {
     XCTAssertEqual(v1, CGVector(dx: 250, dy: 125))
   }
 
+  func testMultiplyingVectorByIntTuple() {
+    v1 *= itup
+    XCTAssertEqual(v1, CGVector(dx: 1000, dy: 250))
+  }
+
+  func testMultiplyingVectorByFloatTuple() {
+    v1 *= ftup
+    XCTAssertEqual(v1, CGVector(dx: 1000, dy: 250))
+  }
+
   func testDividingTwoVectors() {
     XCTAssertEqual(v1 / v2, CGVector(dx: 10, dy: 10))
   }
@@ -59,6 +91,16 @@ class CGVectorTests: XCTestCase {
   func testDividingVectorByFloat() {
     v1 /= 2.5
     XCTAssertEqual(v1, CGVector(dx: 40, dy: 20))
+  }
+
+  func testDividingVectorByIntTuple() {
+    v1 /= itup
+    XCTAssertEqual(v1, CGVector(dx: 10, dy: 10))
+  }
+
+  func testDividingVectorByFloatTuple() {
+    v1 /= ftup
+    XCTAssertEqual(v1, CGVector(dx: 10, dy: 10))
   }
 
   func testOffsettingVector() {

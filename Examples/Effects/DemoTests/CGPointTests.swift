@@ -7,6 +7,8 @@ class CGPointTests: XCTestCase {
   var pt1 = CGPoint(x: 100, y: 50)
   let pt2 = CGPoint(x: 10, y: 5)
   let v = CGVector(dx: 2, dy: 0.5)
+  let itup = (10, 5)
+  let ftup = (10.0, 5.0)
 
   func testAddingTwoPoints() {
     XCTAssertEqual(pt1 + pt2, CGPoint(x: 110, y: 55))
@@ -22,6 +24,16 @@ class CGPointTests: XCTestCase {
     XCTAssertEqual(pt1, CGPoint(x: 102, y: 50.5))
   }
 
+  func testAddingIntTupleToPoint() {
+    pt1 += itup
+    XCTAssertEqual(pt1, CGPoint(x: 110, y: 55))
+  }
+
+  func testAddingFloatTupleToPoint() {
+    pt1 += ftup
+    XCTAssertEqual(pt1, CGPoint(x: 110, y: 55))
+  }
+
   func testSubtractingTwoPoints() {
     XCTAssertEqual(pt1 - pt2, CGPoint(x: 90, y: 45))
   }
@@ -34,6 +46,16 @@ class CGPointTests: XCTestCase {
   func testSubtractingVectorFromPoint() {
     pt1 -= v
     XCTAssertEqual(pt1, CGPoint(x: 98, y: 49.5))
+  }
+
+  func testSubtractingIntTupleFromPoint() {
+    pt1 -= itup
+    XCTAssertEqual(pt1, CGPoint(x: 90, y: 45))
+  }
+
+  func testSubtractingFloatTupleFromPoint() {
+    pt1 -= ftup
+    XCTAssertEqual(pt1, CGPoint(x: 90, y: 45))
   }
 
   func testMultiplyingTwoPoints() {
@@ -63,6 +85,16 @@ class CGPointTests: XCTestCase {
     XCTAssertEqual(pt1, CGPoint(x: 200, y: 25))
   }
 
+  func testMultiplyingPointByIntTuple() {
+    pt1 *= itup
+    XCTAssertEqual(pt1, CGPoint(x: 1000, y: 250))
+  }
+
+  func testMultiplyingPointByFloatTuple() {
+    pt1 *= ftup
+    XCTAssertEqual(pt1, CGPoint(x: 1000, y: 250))
+  }
+
   func testDividingTwoPoints() {
     XCTAssertEqual(pt1 / pt2, CGPoint(x: 10, y: 10))
   }
@@ -88,6 +120,16 @@ class CGPointTests: XCTestCase {
   func testDividingPointByVector() {
     pt1 /= v
     XCTAssertEqual(pt1, CGPoint(x: 50, y: 100))
+  }
+
+  func testDividingPointByIntTuple() {
+    pt1 /= itup
+    XCTAssertEqual(pt1, CGPoint(x: 10, y: 10))
+  }
+
+  func testDividingPointByFloatTuple() {
+    pt1 /= ftup
+    XCTAssertEqual(pt1, CGPoint(x: 10, y: 10))
   }
 
   func testOffsettingPoint() {
