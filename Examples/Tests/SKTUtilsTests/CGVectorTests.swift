@@ -80,8 +80,8 @@ class CGVectorTests: XCTestCase {
   func testInitWithZeroDegreeAngle() {
     let a: CGFloat = 0
     let v = CGVector(angle: a)
-    XCTAssertEqual(v.dx, 1.0)
-    XCTAssertEqual(v.dy, 0.0)
+    XCTAssertEqual(v.dx, CGFloat(1.0))
+    XCTAssertEqual(v.dy, CGFloat(0.0))
   }
 
   func testInitWith45DegreeAngle() {
@@ -94,15 +94,15 @@ class CGVectorTests: XCTestCase {
   func testInitWith90DegreeAngle() {
     let a = π/2.0
     let v = CGVector(angle: a)
-    XCTAssertEqualWithAccuracy(v.dx, 0.0, CGFloat(FLT_EPSILON))
-    XCTAssertEqual(v.dy, 1.0)
+    XCTAssertEqualWithAccuracy(v.dx, CGFloat(0.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqual(v.dy, CGFloat(1.0))
   }
 
   func testInitWith180DegreeAngle() {
     let a = π
     let v = CGVector(angle: a)
     XCTAssertEqual(v.dx, -1.0)
-    XCTAssertEqualWithAccuracy(v.dy, 0.0, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v.dy, CGFloat(0.0), CGFloat(FLT_EPSILON))
   }
 
   func testInitWithMinus135DegreeAngle() {
@@ -114,7 +114,7 @@ class CGVectorTests: XCTestCase {
 
   func testZeroDegreeAngle() {
     let v = CGVector(dx: 1.0, dy: 0.0)
-    XCTAssertEqual(v.angle, 0)
+    XCTAssertEqual(v.angle, CGFloat(0))
   }
 
   func test45DegreeAngle() {
@@ -139,12 +139,12 @@ class CGVectorTests: XCTestCase {
 
   func testLengthHorizontalUnitVector() {
     let v = CGVector(dx: 1.0, dy: 0.0)
-    XCTAssertEqual(v.length(), 1.0)
+    XCTAssertEqual(v.length(), CGFloat(1.0))
   }
 
   func testLengthVerticalUnitVector() {
     let v = CGVector(dx: 0.0, dy: 1.0)
-    XCTAssertEqual(v.length(), 1.0)
+    XCTAssertEqual(v.length(), CGFloat(1.0))
   }
 
   func testLength() {
@@ -159,11 +159,11 @@ class CGVectorTests: XCTestCase {
 
   func testLengthSquared() {
     let v = CGVector(dx: 1.0, dy: 1.0)
-    XCTAssertEqual(v.lengthSquared(), 2.0)
+    XCTAssertEqual(v.lengthSquared(), CGFloat(2.0))
   }
 
   func testDistance() {
-    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), 100.6230589874, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(v1.distanceTo(v2), CGFloat(100.6230589874), CGFloat(FLT_EPSILON))
   }
 
   func testThatLengthEqualsDistance() {

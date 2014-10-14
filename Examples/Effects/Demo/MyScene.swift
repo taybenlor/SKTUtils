@@ -46,8 +46,8 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
 
   // ---- Initialization ----
 
-  required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder) is not used in this app")
   }
 
   override init(size: CGSize) {
@@ -603,7 +603,7 @@ class MyScene: SKScene, SKPhysicsContactDelegate {
     
     let point = border.convertPoint(contactPoint, fromNode: worldLayer)
     let distanceToCenter = (point.y - length) / length
-    let angle = 10.degreesToRadians() * distanceToCenter
+    let angle = CGFloat(10).degreesToRadians() * distanceToCenter
 
     worldPivot.runAction(SKAction.screenRotateWithNode(worldPivot, angle: angle, oscillations: 1, duration: 1))
   }

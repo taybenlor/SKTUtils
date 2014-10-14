@@ -109,8 +109,8 @@ class CGPointTests: XCTestCase {
   func testInitWithZeroDegreeAngle() {
     let a: CGFloat = 0
     let pt = CGPoint(angle: a)
-    XCTAssertEqual(pt.x, 1.0)
-    XCTAssertEqual(pt.y, 0.0)
+    XCTAssertEqual(pt.x, CGFloat(1.0))
+    XCTAssertEqual(pt.y, CGFloat(0.0))
   }
 
   func testInitWith45DegreeAngle() {
@@ -123,15 +123,15 @@ class CGPointTests: XCTestCase {
   func testInitWith90DegreeAngle() {
     let a = π/2.0
     let pt = CGPoint(angle: a)
-    XCTAssertEqualWithAccuracy(pt.x, 0.0, CGFloat(FLT_EPSILON))
-    XCTAssertEqual(pt.y, 1.0)
+    XCTAssertEqualWithAccuracy(pt.x, CGFloat(0.0), CGFloat(FLT_EPSILON))
+    XCTAssertEqual(pt.y, CGFloat(1.0))
   }
 
   func testInitWith180DegreeAngle() {
     let a = π
     let pt = CGPoint(angle: a)
     XCTAssertEqual(pt.x, -1.0)
-    XCTAssertEqualWithAccuracy(pt.y, 0.0, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt.y, CGFloat(0.0), CGFloat(FLT_EPSILON))
   }
 
   func testInitWithMinus135DegreeAngle() {
@@ -143,7 +143,7 @@ class CGPointTests: XCTestCase {
 
   func testZeroDegreeAngle() {
     let pt = CGPoint(x: 1.0, y: 0.0)
-    XCTAssertEqual(pt.angle, 0)
+    XCTAssertEqual(pt.angle, CGFloat(0))
   }
 
   func test45DegreeAngle() {
@@ -168,12 +168,12 @@ class CGPointTests: XCTestCase {
 
   func testLengthHorizontalUnitVector() {
     let pt = CGPoint(x: 1.0, y: 0.0)
-    XCTAssertEqual(pt.length(), 1.0)
+    XCTAssertEqual(pt.length(), CGFloat(1.0))
   }
 
   func testLengthVerticalUnitVector() {
     let pt = CGPoint(x: 0.0, y: 1.0)
-    XCTAssertEqual(pt.length(), 1.0)
+    XCTAssertEqual(pt.length(), CGFloat(1.0))
   }
   
   func testLength() {
@@ -188,11 +188,11 @@ class CGPointTests: XCTestCase {
 
   func testLengthSquared() {
     let pt = CGPoint(x: 1.0, y: 1.0)
-    XCTAssertEqual(pt.lengthSquared(), 2.0)
+    XCTAssertEqual(pt.lengthSquared(), CGFloat(2.0))
   }
 
   func testDistance() {
-    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), 100.6230589874, CGFloat(FLT_EPSILON))
+    XCTAssertEqualWithAccuracy(pt1.distanceTo(pt2), CGFloat(100.6230589874), CGFloat(FLT_EPSILON))
   }
 
   func testThatLengthEqualsDistance() {
