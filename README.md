@@ -2,9 +2,11 @@
 
 A collection of Sprite Kit helper classes and functions, written in Swift. 
 
-This code was originally written for the book [iOS Games by Tutorials](http://raywenderlich.com/store/ios-games-by-tutorials), which is published through [raywenderlich.com](http://raywenderlich.com).
+This code was originally written for the book [iOS Games by Tutorials, Second Edition](http://raywenderlich.com/store/ios-games-by-tutorials), which is published through [raywenderlich.com](http://raywenderlich.com).
 
-![iOS Games by Tutorials](http://cdn4.raywenderlich.com/wp-content/uploads/2013/10/iGT_PDFonly_280@2x.png "iOS Games by Tutorials")
+![iOS Games by Tutorials](http://cdn2.raywenderlich.com/wp-content/themes/raywenderlich/images/store/iGT-PDF-phones-640.png "iOS Games by Tutorials")
+
+For the older Objective-C version of SKTUtils, see the [objective-c branch](http://github.com/raywenderlich/SKTUtils/tree/objective-c).
 
 ## What can SKTUtils do for you?
 
