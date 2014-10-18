@@ -6,11 +6,7 @@ This code was originally written for the book [iOS Games by Tutorials, Second Ed
 
 ![iOS Games by Tutorials](http://cdn2.raywenderlich.com/wp-content/themes/raywenderlich/images/store/iGT-PDF-phones-640.png "iOS Games by Tutorials")
 
-<<<<<<< HEAD
 SKTUtils requires Xcode 6.1. For the older Objective-C version of SKTUtils, see the [objective-c branch](http://github.com/raywenderlich/SKTUtils/tree/objective-c).
-=======
-For the older Objective-C version of SKTUtils, see the [objective-c branch](http://github.com/raywenderlich/SKTUtils/tree/objective-c).
->>>>>>> 53a9bb6bf83fe40b6e4cdadc47fccbb74ab7c579
 
 ## What can SKTUtils do for you?
 
